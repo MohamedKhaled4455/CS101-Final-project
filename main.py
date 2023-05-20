@@ -22,7 +22,7 @@ def create_product_database():
             "stock": int(product_stock),
         }
     return product_db
-
+#
 
 # Function to display the product menu
 def display_menu(product_db):
