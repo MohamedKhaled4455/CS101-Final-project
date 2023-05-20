@@ -1,7 +1,7 @@
 # Function to read inputs from a file
 def read_inputs_from_file(products):
-    with open(products, "r") as f:
-        inputs = f.readlines()
+    file = open("products.txt", "r")
+    inputs= file.readlines()
     return inputs
 
 
