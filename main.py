@@ -1,6 +1,6 @@
 # Function to read inputs from a file
 def read_inputs_from_file(products):
-    file = open("products.txt", "r")
+    file = open(products, "r")
     inputs= file.readlines()
     return inputs
 
@@ -14,7 +14,7 @@ def print_to_screen_and_file(text, screen, file):
 # Function to create a product database
 def create_product_database():
     product_db = {}
-    for line in read_inputs_from_file("products.txt"):
+    for line in read_inputs_from_file(products):
         product_code, product_name, product_price, product_stock = line.split(",")
         product_db[product_code] = {
             "name": product_name,
