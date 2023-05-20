@@ -18,7 +18,7 @@ def create_product_database():
         product_code, product_name, product_price, product_stock = line.split(",")
         product_db[product_code] = {
             "name": product_name,
-            "price": product_price,
+            "price": float(product_price),
             "stock": int(product_stock),
         }
     return product_db
