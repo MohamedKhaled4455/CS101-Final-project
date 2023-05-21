@@ -60,7 +60,21 @@ def process_order(product_db):
 
     total_price = quantity * product_db[code]["price"]
     product_db[code]["stock"] -= quantity
-    #add editing quantitiy on the file
+
+    # Update the quantity in the file for the corresponding code
+    lines = read_inputs_from_file("products.txt")
+    for i in range(len(lines)):
+        product_line = lines[i].split(",")
+        if product_line[0] == code:
+            product_line[3] = str(product_db[code]["stock"])
+            lines[i] = ",".join(product_line)+ "\n"
+            break
+
+    file = open("products.txt", "w")
+    for line in lines:
+        file.write(line)
+    file.close()
+
     print(f"Total price: {total_price}")
 
 
