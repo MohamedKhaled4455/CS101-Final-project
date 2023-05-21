@@ -39,13 +39,13 @@ def process_order(product_db):
         return
 
     quantity = int(input("Enter quantity: "))
-    product = product_db[code]
-    if quantity > product["stock"]:
+    if quantity > product_db[code]["stock"]:
         print("Insufficient stock")
         return
 
-    total_price = quantity * product["price"]
-    product["stock"] -= quantity
+    total_price = quantity * product_db[code]["price"]
+    product_db[code]["stock"] -= quantity
+    #add editing quantitiy on the file
     print(f"Total price: {total_price}")
 
 
