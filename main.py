@@ -28,7 +28,7 @@ def create_product_database():
 def display_menu(product_db):
     print("Product Code\tProduct Name\tPrice\tStock")
     for code, values in product_db.items(): #loop on keys and its values
-        print(f"{code}\t{values['name']}\t\t{values['price']}\t{values['stock']}")
+        print(f"{code}\t\t\t\t {values['name']}\t\t\t{values['price']}\t\t{values['stock']}")
 
 
 # Function to process an order
