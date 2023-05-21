@@ -1,3 +1,13 @@
+#Global variables to be called inside different functions
+code= 0
+name=0
+unit_price=0
+quantity=0
+total_price=0
+
+
+
+
 # Function to read inputs from a file
 def read_inputs_from_file(products):
     file = open(products, "r")
@@ -33,7 +43,12 @@ def display_menu(product_db):
 
 # Function to process an order
 def process_order(product_db):
+    global code,name,unit_price,quantity,total_price
+
     code = input("Enter product code: ")
+    name = product_db[code]["name"] # updating global variables after taking the code
+    unit_price = product_db[code]["price"] # updating global variables after taking the code
+
     if code not in product_db:
         print("Invalid product code")
         return
@@ -50,10 +65,13 @@ def process_order(product_db):
 
 
 # Function to generate a receipt
-def generate_receipt(product_db):
+def generate_receipt():
+    global code,name,unit_price,quantity,total_price
     print("Receipt:")
-    for code, product in product_db.items():
-        print(f"{product['name']} ({code}): {product['stock']} left")
+    print("Code\t\tProduct Name\t\tUnit Price\t\tQuantity")
+    print(f"{code}\t\t\t{name}\t\t\t\t{unit_price}\t\t\t\t{quantity}\n")
+    print(f"                       \t\t\tReceipt Total \t{total_price}")
+
     print("Thank you for shopping with us!")
 
 
@@ -70,7 +88,7 @@ def main_menu():
         elif choice == 2:
             process_order(product_db)
         elif choice == 3:
-            generate_receipt(product_db)
+            generate_receipt()
         elif choice == 4:
             break
 
