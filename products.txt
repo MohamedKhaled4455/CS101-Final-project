@@ -1,3 +1,3 @@
-A1,Coke,1.50,10
-A2,Chips,2.00,5
-A3,Candy,0.50,20
+A1,Coke,1.50,24
+A2,Chips,2.00,10
+A3,Candy,0.50,3

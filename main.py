@@ -39,7 +39,7 @@ def display_menu(product_db):
     print("Product Code\tProduct Name\tPrice\tStock")
     for code, values in product_db.items(): #loop on keys and its values
         print(f"{code}\t\t\t\t {values['name']}\t\t\t{values['price']}\t\t{values['stock']}")
-
+    print("* Press 2 to process order\n")
 
 # Function to process an order
 def process_order(product_db):
@@ -75,7 +75,7 @@ def process_order(product_db):
         file.write(line)
     file.close()
 
-    print(f"Total price: {total_price}")
+    print(f"\nTotal price: {total_price}\n* Press 3 to generate receipt\n")
 
 
 # Function to generate a receipt
@@ -86,7 +86,7 @@ def generate_receipt():
     print(f"{code}\t\t\t{name}\t\t\t\t{unit_price}\t\t\t\t{quantity}\n")
     print(f"                       \t\t\tReceipt Total \t{total_price}")
 
-    print("Thank you for shopping with us!")
+    print("Thank you for shopping with us!\n")
 
 
 # Function to main menu
