@@ -7,11 +7,13 @@ Functionality:
 2. Process order: Allows the user to enter a product code and quantity to place an order. It checks the availability of the product and updates the stock quantity accordingly.
 3. Generate receipt: Generates a receipt for the last processed order, displaying the product code, name, unit price, quantity, and the total price.
 4. Exit: Terminates the program.
+5- 'GUI'
 
 Files:
 - `products.txt`: Contains the product information in the format "code,name,price,stock". Each product is listed on a separate line.
 - `main.py`: The main Python script that implements the product ordering system.
 - 'run_in_cmd': provides the option to function file 'main.py', but in cmd
+- 'GUI': make easier for the user to function the main code file with simpler interface
 
 Usage:
 1. Make sure the `products.txt` file is present and contains the correct product information.
