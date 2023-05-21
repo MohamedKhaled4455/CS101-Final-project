@@ -53,8 +53,7 @@ def process_order(product_db):
 def generate_receipt(product_db):
     print("Receipt:")
     for code, product in product_db.items():
-        if product["stock"] < 10:
-            print(f"{product['name']} ({code}): {product['stock']} left")
+        print(f"{product['name']} ({code}): {product['stock']} left")
     print("Thank you for shopping with us!")
 
 
