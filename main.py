@@ -56,13 +56,16 @@ def process_order(product_db):
     global code,name,unit_price,quantity,total_price
 
     code = input("Enter product code: ")
-    # Update the name and unit_price global variables based on the entered code
-    name = product_db[code]["name"] # updating global variables after taking the code
-    unit_price = product_db[code]["price"] # updating global variables after taking the code
-    #check if the code is found in database
+
+    # check if the code is found in database
     if code not in product_db:
         print("Invalid product code")
         return
+
+    # Update the name and unit_price global variables based on the entered code
+    name = product_db[code]["name"] # updating global variables after taking the code
+    unit_price = product_db[code]["price"] # updating global variables after taking the code
+
     #check if there is enough amount products in stock to process with
     quantity = int(input("Enter quantity: "))
     if quantity > product_db[code]["stock"]:
